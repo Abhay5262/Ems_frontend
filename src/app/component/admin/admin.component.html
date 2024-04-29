@@ -1,0 +1,43 @@
+<div style="display: flex; justify-content: flex-end"  >
+<button style="margin-right: 20px;" mat-button color="warn" routerLink="/adminregister"  routerLinkActive="router-link-active"  >Register Admin</button>
+</div>
+<mat-card>      
+    <h1>Employee Details</h1>
+        <div class="bootstrap-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let s of students">
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <div mat-card-avatar class="example-header-image mr-2">
+                                    <div mat-card-avatar class="example-header-image">
+                                      <img [src]="'../../../assets/'+s.img" alt="photo"  style=" height: 55px; width: 55px; border: 1px  solid black; border-radius: 20% ;" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-9">
+                                  <mat-card-title>{{s.name}}</mat-card-title>
+                                  <mat-card-subtitle>{{s.department}} | {{s.gender}} | {{s.email}}</mat-card-subtitle>
+                                </div>
+                              </div>
+
+                            </mat-card-header>
+                           
+                            <mat-card-content>
+                             
+                            </mat-card-content>
+                            <mat-card-actions >
+                              <button mat-button color="primary" (click)="updateStudent(s)" style="margin-right: 10px;" >Update</button>
+                              <button mat-button color="warn" (click)="deletedata(s.emp_id)" >Delete</button>
+                              <button mat-button color="accent"  (click)="openDetail(s)">view</button>
+                            </mat-card-actions>
+                          </mat-card>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+</mat-card>
+

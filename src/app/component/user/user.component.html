@@ -1,0 +1,47 @@
+<mat-form-field>
+    <mat-label>Enter Id</mat-label>
+    <input matInput placeholder="enter id" #id="ngModel" name="id" ngModel required >
+    </mat-form-field>
+    <button  mat-raised-button color="primary" (click)="getdatabyid(id.value)" [disabled]="id.invalid">getdata</button>
+<div *ngIf="Student" >
+    
+<mat-card>
+    <h1>Employee Details</h1>
+        <div class="bootstrap-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4" >
+                        <mat-card class="example-card">
+                            <mat-card-header>
+                              <div class="row">
+                                <div class="col-md-3">
+                                  <div mat-card-avatar class="example-header-image mr-2">
+                                    <div mat-card-avatar class="example-header-image">
+                                      <img [src]="'../../../assets/'+Student.img" alt="photo"  style=" height: 55px; width: 55px; border: 1px  solid black; border-radius: 20% ;" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-9">
+                                  <mat-card-title>{{Student.name}}</mat-card-title>
+                                  <mat-card-subtitle>{{Student.department}} | {{Student.gender}} | {{Student.email}}</mat-card-subtitle>
+                                </div>
+                              </div>
+
+                            </mat-card-header>
+                           
+                            <mat-card-content>
+                             
+                            </mat-card-content>
+                            <mat-card-actions>
+                              <button mat-button color="primary" (click)="updateStudent(Student)"   style="margin-right: 10px;" >Update</button>
+                              <!-- <button mat-button color="warn"  >Delete</button> -->
+                              <button mat-button color="accent" (click)="openDetail(Student)" >view</button>
+                            </mat-card-actions>
+                          </mat-card>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+</mat-card>
+</div>

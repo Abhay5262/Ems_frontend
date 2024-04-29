@@ -1,0 +1,35 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+          <form novalidate #form="ngForm" (ngSubmit)="postdata(form.value)">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>User name</mat-label>
+              <input type="email"  matInput placeholder="enter Username" name="username" #username="ngModel" ngModel required >
+            </mat-form-field>
+            
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Paasword</mat-label>
+              <input type="password"  matInput placeholder="enter password" name="password" #password="ngModel" required ngModel>
+            </mat-form-field>
+            
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>role</mat-label>
+              <mat-select #branch="ngModel" name="role" ngModel  required>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="d-grid">
+            <button type="submit"  mat-raised-button color="primary">Login</button>
+            
+            <!-- <button mat-flat-button color="primary" routerLink="/forgtpassword"  >fogetpassword</button> -->
+          </div>
+           
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>

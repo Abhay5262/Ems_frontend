@@ -1,0 +1,122 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-5">
+                <form novalidate [formGroup]="form" (submit)="register()">
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>emp_id</mat-label>
+                        <input matInput placeholder="enter emp_id" name="emp_id" formControlName="emp_id" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>name</mat-label>
+                        <input type="name" matInput placeholder="enter name"  maxlength="6"  name="name" formControlName="name"
+                            required>
+                    </mat-form-field>
+
+
+
+                    <label class="w-100">Gender: </label>
+                    <mat-radio-group name="gender" required formControlName="gender">
+                        <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button>
+                    </mat-radio-group>
+
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Contact number</mat-label>
+                        <input matInput placeholder="enter Contact Number" maxlength="10" name="contact" formControlName="contact"
+                            required>
+                    </mat-form-field>
+
+
+
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>salary</mat-label>
+                        <input matInput placeholder="enter valid salary" name="salary" formControlName="salary"
+                            required>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>email</mat-label>
+                        <input type="email" pattern=".+@example\.com" matInput placeholder="enter email" name="email" formControlName="email"
+                            required>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="w-100">
+                        <mat-label>Birth-date</mat-label>
+                        <input matInput [matDatepicker]="picker" name="dob" formControlName="dob" required>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Branch</mat-label>
+                        <mat-select name="department" formControlName="department" required>
+                            <mat-option *ngFor="let food of foods" [value]="food.value">
+                                {{food.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>qualification</mat-label>
+                        <input matInput placeholder="enter valid qualification" name="qualification"
+                            formControlName="qualification" required>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>passingyear</mat-label>
+                        <input matInput placeholder="enter valid passingyear" name="passingyear"
+                            formControlName="passingyear" required>
+                    </mat-form-field>
+                    <!-- <div class="alert alert-danger" *ngIf="pinCode.touched && pinCode.invalid">
+              <div *ngIf="pinCode.errors && pinCode.errors['required']">
+                <strong> pinCode is required</strong>
+              </div>
+              </div> -->
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>experince</mat-label>
+                        <input matInput placeholder="enter valid experince" name="experince" formControlName="experince"
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>collegename</mat-label>
+                        <input matInput placeholder="enter valid collegename" name="collegename"
+                            formControlName="collegename" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>password</mat-label>
+                        <input type="password" matInput placeholder="enter valid password" name="password" formControlName="password"
+                            required>
+                    </mat-form-field>
+                    <!-- &nbsp;
+                    &nbsp;
+                    <mat-form-field class="w-50" appearance="outline">
+                        <mat-label>role</mat-label>
+                        <input matInput placeholder="enter valid role" name="role" formControlName="role" required>
+                    </mat-form-field>  -->
+
+
+                    <div class="d-grid">
+                        <label for="formFile" class="form-label">Upload file example</label>
+                        <input class="form-control" type="file" (change)="this.onFilechange($event)" id="img"
+                            formControlName="img" required>
+                        &nbsp;
+                        <button type="submit" mat-raised-button color="primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

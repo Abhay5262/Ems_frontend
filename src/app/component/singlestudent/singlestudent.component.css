@@ -1,0 +1,19 @@
+.example-header-image {
+ 
+    background-size: cover;
+    width: 150px;
+    height: 100px;
+  }
+   
+  .header{
+    margin-top: 20px;
+  }
+   
+  .subtitle{
+    margin-left: 150px;
+    margin-top: 20px;
+  }
+   
+  .action{
+    margin-top: 25px;
+  }

@@ -1,0 +1,23 @@
+<mat-card-header class="header">
+    <div mat-card-avatar class="example-header-image">
+        <img [src]="'../../../assets/'+data.info.img" alt="" style="height: 350px; width: 250px; border: 1px solid black; border-radius: 5% ;">
+    </div>
+ 
+    <mat-card-subtitle class="subtitle"><b><label>EmpId :- </label></b> {{data.info.emp_id}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Name :- </label></b> {{data.info.name}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Email :- </label></b> {{data.info.email}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>DOB :- </label> </b>{{data.info.dob | date}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Contact :- </label> </b>{{data.info.contact}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Password :- </label></b> {{data.info.password}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>PassingYear :- </label></b> {{data.info.passingyear}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Deparment :- </label> </b>{{data.info.department}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>Gender :- </label> </b>{{data.info.gender}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>College :- </label> </b>{{data.info.collegename}}</mat-card-subtitle>
+    <mat-card-subtitle class="subtitle"><b><label>qualification:- </label> </b>{{data.info.qualification}}</mat-card-subtitle>
+ 
+</mat-card-header>
+ 
+<mat-card-actions class="action" style="display: flex; justify-content: center;">
+    <!-- <button mat-button class="btn btn-primary" style="margin-right: 20px;" (click)="updateData()">Update</button>
+    <button mat-button class="btn btn-primary" style="margin-right: 20px;" >Delete</button> -->
+</mat-card-actions>
