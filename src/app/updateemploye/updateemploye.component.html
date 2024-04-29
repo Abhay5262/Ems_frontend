@@ -1,9 +1,11 @@
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row">
+            <div class="mt-5" style="display: flex; justify-content: center" >
+                <img [src]="'../../../assets/'+data.info.img" alt="photo" class="rounded-circle"  style=" height: 90px; width: 90px; border: 1px  solid black; border-radius: 20% ;" >
+              </div>
             <div class="col-md-6 offset-md-3 mt-5">
                 <form novalidate [formGroup]="form" (submit)="updatebyid()">
-
                     <mat-form-field class="w-25" appearance="outline">
                         <mat-label>emp_id</mat-label>
                         <input matInput placeholder="enter emp_id" name="emp_id" formControlName="emp_id" required

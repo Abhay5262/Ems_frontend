@@ -38,6 +38,7 @@ export class RegisterComponent {
   }
 
   register(){
+    this.form.value.role="ROLE_USER"
     this.data.register(this.form.img,this.form.value).subscribe((res:any)=>{
       console.log(res)
       Swal.fire({

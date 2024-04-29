@@ -6,14 +6,14 @@
         <div class="bootstrap-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4" *ngFor="let s of students">
+                    <div class="col-md-3" *ngFor="let s of students">
                         <mat-card class="example-card">
                             <mat-card-header>
                               <div class="row">
                                 <div class="col-md-3">
                                   <div mat-card-avatar class="example-header-image mr-2">
                                     <div mat-card-avatar class="example-header-image">
-                                      <img [src]="'../../../assets/'+s.img" alt="photo"  style=" height: 55px; width: 55px; border: 1px  solid black; border-radius: 20% ;" >
+                                      <img [src]="'../../../assets/'+s.img" alt="photo" class="rounded-circle"  style=" height: 55px; width: 55px; border: 1px  solid black; border-radius: 20% ;" >
                                     </div>
                                   </div>
                                 </div>
