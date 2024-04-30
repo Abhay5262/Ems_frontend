@@ -1,19 +1,19 @@
 <div style="display: flex; justify-content: flex-end"  >
-<button style="margin-right: 20px;" mat-button color="warn" routerLink="/adminregister"  routerLinkActive="router-link-active"  >Register Admin</button>
+<button style="margin-right: 20px;" mat-button color="warn" routerLink="/adminregister"   routerLinkActive="router-link-active" [@buttonHoverAnimation] >Register Admin</button>
 </div>
 <mat-card>      
     <h1>Employee Details</h1>
-        <div class="bootstrap-wrapper">
+        <div class="bootstrap-wrapper ">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3" *ngFor="let s of students">
+                    <div class="col-xl-3 col-sm-12 " *ngFor="let s of students">
                         <mat-card class="example-card">
-                            <mat-card-header>
+                            <mat-card-header [@buttonAnimation]   >
                               <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-8">
                                   <div mat-card-avatar class="example-header-image mr-2">
-                                    <div mat-card-avatar class="example-header-image">
-                                      <img [src]="'../../../assets/'+s.img" alt="photo" class="rounded-circle"  style=" height: 55px; width: 55px; border: 1px  solid black; border-radius: 20% ;" >
+                                    <div mat-card-avatar class="example-header-image mt-3" >
+                                      <img [src]="'../../../assets/'+s.img" (click)="updateStudent(s)"  routerLinkActive="router-link-active"   alt="photo" class="rounded"  style=" height: 60px; width: 60px; border: 1px  solid black; border-radius: 20% ;" >
                                     </div>
                                   </div>
                                 </div>
@@ -29,9 +29,9 @@
                              
                             </mat-card-content>
                             <mat-card-actions >
-                              <button mat-button color="primary" (click)="updateStudent(s)" style="margin-right: 10px;" >Update</button>
-                              <button mat-button color="warn" (click)="deletedata(s.emp_id)" >Delete</button>
-                              <button mat-button color="accent"  (click)="openDetail(s)">view</button>
+                              <button mat-button color="primary" (click)="updateStudent(s)" style="margin-right: 10px;" [@buttonAnimation] >Update</button>
+                              <button mat-button color="warn" (click)="deletedata(s.emp_id)" [@buttonAnimation] >Delete</button>
+                              <button mat-button color="accent"  (click)="openDetail(s)"  [@buttonAnimation]>view</button>
                             </mat-card-actions>
                           </mat-card>
                     </div>

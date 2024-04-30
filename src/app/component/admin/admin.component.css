@@ -6,3 +6,9 @@
     background-image: url('/assets/..');
     background-size: cover;
 }
+/* mat-card-actions {
+    transform: rotateX(150deg,100deg);
+  } */
+  .mat-button {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
