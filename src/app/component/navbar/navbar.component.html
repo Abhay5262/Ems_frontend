@@ -6,6 +6,7 @@
         <button mat-flat-button color="primary" routerLink="/login" *ngIf="!auth.session"   >Login</button>
         <button mat-flat-button color="primary" routerLink="/register" *ngIf="!auth.session" >register</button>
         <button mat-flat-button color="primary"  routerLink="/login" *ngIf="auth.session" (click)="logout()" >LogOut</button>
+        
     </mat-toolbar>
     
 </div>

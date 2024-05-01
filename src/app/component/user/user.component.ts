@@ -5,6 +5,7 @@ import { SinglestudentComponent } from '../singlestudent/singlestudent.component
 import { EmpdetailComponent } from '../empdetail/empdetail.component';
 import { UpdateemployeComponent } from 'src/app/updateemploye/updateemploye.component';
 import { animate, style, transition, trigger } from '@angular/animations';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user',
@@ -26,10 +27,19 @@ export class UserComponent {
   
   getdatabyid(id:any){
     this.data.getemp(id).subscribe(
-      (response:any)=>{
-        console.log(response);
-        this.Student=response;
-      },
+      {
+        next: (response:any)=>{
+          console.log(response);
+          this.Student=response;
+        },
+        error: (err:any) =>{
+          // console.log("HELOOO",err);
+          Swal.fire({
+            icon: 'error',
+            text:err.error.exceptionMessage
+          });
+        }
+      }
     )
   }
 

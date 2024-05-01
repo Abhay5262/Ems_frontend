@@ -12,3 +12,9 @@
   .mat-button {
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
+
+  .dark-theme {
+    background-color: #121212;
+    color: #000000;
+  }
+  

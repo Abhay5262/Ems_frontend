@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataproviderService } from 'src/app/service/dataprovider.service';
+import Swal from 'sweetalert2';
 interface Food
  {
   value: string;
@@ -21,7 +22,8 @@ export class LoginComponent {
 
     console.log("Posting Data",payload);
     this.data.login(payload).subscribe(
-      (res:any)=>{
+     {
+      next: (res:any)=>{
         localStorage.setItem("role",payload.role)
         console.log("Success",res);
         this.data.session={username:'xyz'};
@@ -33,7 +35,14 @@ export class LoginComponent {
           } else {
             this.router.navigate(['/admin'])
           }
+      },
+      error: (err:any)=>{
+        Swal.fire({
+          icon: 'error',
+          text:err.error.exceptionMessage
+        });
       }
+    }
     )
   }
   foods: Food[] = [

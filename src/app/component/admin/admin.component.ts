@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { UpdateemployeComponent } from 'src/app/updateemploye/updateemploye.component';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
+
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -38,14 +40,23 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
 export class AdminComponent {
   students:any;
   constructor(private data:DataproviderService,private dialog:MatDialog){
+   
+  
     this.getall();
   }
 
     getall(){
       this.data.getallusers().subscribe((res:any)=>{
         console.log(res);
+        console.log("hello1",res);
         this.students=res;
-      })
+      },
+      (err:any)=>{
+        
+        console.log("hello",err);
+      }
+
+    )
     }
 
     deletedata(enrollmentNo:any){
@@ -97,15 +108,10 @@ export class AdminComponent {
       });
     }
 
-    isHovered: boolean = false;
+    
 
-    @HostListener('mouseenter')
-    onMouseEnter() {
-      this.isHovered = true;
-    }
+ 
   
-    @HostListener('mouseleave')
-    onMouseLeave() {
-      this.isHovered = false;
-    }
+
+
   }

@@ -13,6 +13,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,8 @@ import { EmpdetailComponent } from './component/empdetail/empdetail.component';
 import { RegisteradminComponent } from './component/registeradmin/registeradmin.component';
 import { AdminregisterComponent } from './component/adminregister/adminregister.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,8 @@ import { AdminregisterComponent } from './component/adminregister/adminregister.
     UpdateemployeComponent,
     EmpdetailComponent,
     RegisteradminComponent,
-    AdminregisterComponent
+    AdminregisterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,8 @@ import { AdminregisterComponent } from './component/adminregister/adminregister.
     MatDialogModule,
     MatDatepickerModule,
     MatRadioModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatIconModule
   ],
   providers: [DataproviderService,HttpClientModule,authInterceptorProviders],
   bootstrap: [AppComponent]
