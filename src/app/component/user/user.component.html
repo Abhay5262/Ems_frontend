@@ -5,14 +5,14 @@
     <button  mat-raised-button color="primary" (click)="getdatabyid(id.value)" [disabled]="id.invalid">getdata</button>
 <div *ngIf="Student" >
     
-<mat-card>
+<mat-card [@buttonAnimation]>
     <h1>Employee Details</h1>
         <div class="bootstrap-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4" >
                         <mat-card class="example-card">
-                            <mat-card-header>
+                            <mat-card-header >
                               <div class="row">
                                 <div class="col-md-3">
                                   <div mat-card-avatar class="example-header-image mr-2">

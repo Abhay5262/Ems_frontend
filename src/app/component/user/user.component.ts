@@ -4,11 +4,20 @@ import { DataproviderService } from 'src/app/service/dataprovider.service';
 import { SinglestudentComponent } from '../singlestudent/singlestudent.component';
 import { EmpdetailComponent } from '../empdetail/empdetail.component';
 import { UpdateemployeComponent } from 'src/app/updateemploye/updateemploye.component';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  animations :[
+    trigger('buttonAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.9)' }), // Initial state: slightly scaled down
+        animate('1000ms cubic-bezier(0.215, 0.61, 0.355, 1)', style({ opacity: 1, transform: 'scale(1)' })), // Smooth fade-in and scale-up
+      ]),
+    ]),
+  ],
 })
 export class UserComponent {
   Student: any;
